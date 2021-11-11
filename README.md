@@ -1,5 +1,6 @@
 # concrete-cms
-Concrete-cms CVE-2021-22968
+Concrete5-CMS RCE (CVE-2021-22968)
+Affected versions 8.5.6 and 9.0.0
 
 Full write-up at: https://www.fortbridge.co.uk/research/multiple-vulnerabilities-in-concrete-cms-part1-rce/
 
